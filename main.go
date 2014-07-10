@@ -23,9 +23,7 @@ func PanicIf(err error) {
 }
 
 var (
-	databaseName = "go_mongo"
-	collection   = "users"
-	databaseName = "DATABASE NAME"
+	databaseName = "go_mongo" // "DATABASE NAME"
 	collection   = "users"
 )
 
