@@ -23,7 +23,7 @@ func PanicIf(err error) {
 }
 
 var (
-	databaseName = "go_mongo" // "DATABASE NAME"
+	databaseName = "DATABASENAME" // "DATABASE NAME"
 	collection   = "users"
 )
 
@@ -43,8 +43,8 @@ func main() {
 		email := r.FormValue("email")
 		description := r.FormValue("description")
 
-		mgoSession, err := mgo.Dial("localhost")
-		//mgoSession, err := mgo.Dial("USER:PASSWORD@VM IP:VM PORT/DATABASE NAME")
+		//mgoSession, err := mgo.Dial("localhost")
+		mgoSession, err := mgo.Dial("USER:PASSWORD@VM IP:VM PORT/DATABASE NAME")
 		c := mgoSession.DB(databaseName).C(collection)
 
 		err = c.Insert(&User{name, email, description})
